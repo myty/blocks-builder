@@ -1,6 +1,9 @@
 {
   "name": "firebase",
   "version": "0.1.0",
+  "scripts": {
+    "dev": "firebase emulators:start"
+  },
   "dependencies": {
     "firebase-admin": "^10.0.2",
     "firebase-functions": "^3.18.1"
