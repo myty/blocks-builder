@@ -8,7 +8,13 @@ export enum LinkStyle {
 }
 
 interface LinkProps
-  extends Omit<React.HTMLAttributes<HTMLAnchorElement>, "style"> {
+  extends Omit<
+    React.DetailedHTMLProps<
+      React.AnchorHTMLAttributes<HTMLAnchorElement>,
+      HTMLAnchorElement
+    >,
+    "style"
+  > {
   style?: LinkStyle;
 }
 

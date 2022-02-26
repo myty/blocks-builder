@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link, LinkStyle } from "ui";
 
 function Home() {
   return (
@@ -11,13 +12,13 @@ function Home() {
         </p>
       </div>
       <div className="cs1 ce12">
-        <a
-          className="button button-primary"
+        <Link
+          style={LinkStyle.PrimaryButton}
           href="https://beta.developers.miro.com/docs/create-a-developer-team"
           target="_blank"
         >
           Create a Developer team
-        </a>
+        </Link>
       </div>
     </div>
   );
