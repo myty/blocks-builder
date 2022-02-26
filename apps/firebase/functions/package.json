@@ -6,6 +6,7 @@
     "serve": "pnpm run build && firebase emulators:start --only functions",
     "shell": "pnpm run build && firebase functions:shell",
     "start": "pnpm run shell",
+    "dev": "pnpm run build",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"
   },
