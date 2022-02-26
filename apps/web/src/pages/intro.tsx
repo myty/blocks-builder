@@ -1,16 +1,17 @@
 import * as React from "react";
+import { Button, ButtonStyle } from "ui";
 
 function Intro() {
-  const handleStickyNoteCreation = async () => {
+  const handleStickyNoteCreation = React.useCallback(async () => {
     const stickyNote = await miro.board.createStickyNote({
       content: `Hello, World!`,
     });
 
     await miro.board.viewport.zoomTo(stickyNote);
-  };
+  }, []);
 
   return (
-    <div className="grid wrapper">
+    <div className="grid">
       <div className="cs1 ce12">
         <h1>Blocks Builder!</h1>
         <p>
@@ -20,9 +21,9 @@ function Intro() {
         </p>
       </div>
       <div className="cs1 ce12">
-        <a className="button" onClick={handleStickyNoteCreation}>
+        <Button style={ButtonStyle.Primary} onClick={handleStickyNoteCreation}>
           Add Sticky Note
-        </a>
+        </Button>
       </div>
     </div>
   );

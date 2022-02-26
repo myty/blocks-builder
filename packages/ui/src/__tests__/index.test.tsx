@@ -1,11 +1,11 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { CounterButton } from "../CounterButton";
+import { Button } from "../components/button/button";
 
 describe("CounterButton", () => {
   it("renders without crashing", () => {
     const div = document.createElement("div");
-    ReactDOM.render(<CounterButton />, div);
+    ReactDOM.render(<Button />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 });
