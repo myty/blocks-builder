@@ -1,14 +1,15 @@
 import * as React from "react";
 import { Button, ButtonStyle } from "ui";
+import { CreateStickyNoteRequest } from "../features/miro/requests/create-sticky-note-request";
+import { useMediator } from "../providers/mediator-provider";
 
 function Intro() {
-  const handleStickyNoteCreation = React.useCallback(async () => {
-    const stickyNote = await miro.board.createStickyNote({
-      content: `Hello, World!`,
-    });
+  const { send } = useMediator();
 
-    await miro.board.viewport.zoomTo(stickyNote);
-  }, []);
+  const handleStickyNoteCreation = React.useCallback(
+    async () => await send(new CreateStickyNoteRequest("Hello, world!", true)),
+    []
+  );
 
   return (
     <div className="grid">
